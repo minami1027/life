@@ -1,0 +1,263 @@
+@media screen and (max-width:1024px) and (min-width:769px) {
+    .root-users-container > div {
+        width: 100% !important;
+    }
+    .index-media-user {
+        width: 45%;
+        margin: 0 0 30px;
+        float: left;
+    }
+
+    .media-history-memory-link {
+        width: 30% !important;
+    }
+
+    /* user-devise-page */
+    .devise-fields > .field > div {
+        margin: 0;
+    }
+    .devise-fields > .field > div:nth-child(1) {
+        width: 30%;
+    }
+    .devise-fields > .field > div:nth-child(2) {
+        width: 70%;
+    }
+
+    /* user-profile */ 
+    .profile-label {
+        font-size: 12px !important;
+    }
+
+    .media-profile-image {
+        margin: 0 !important;
+    }
+
+    /* talk-index */
+    .talking-button {
+        padding: 8px 10px !important;
+        font-size: 14px !important;
+    }
+
+    /* talk-show */
+    .media-each-his-message {
+        max-width: 400px !important;
+    }
+
+    /* user-gallery */
+    .history-gallery-header {
+        width:95% !important;
+        // font-size: 19px;
+    }
+    .history-image-container > div:nth-child(1) {
+        width: 100%;
+    }
+    .each-history-image {
+        width: 25% !important;
+
+    }
+    .history-image {
+        width: 100%;
+        height: 150px;
+    }
+
+    /* history */
+    .histroy-field-label {
+        font-size: 16px !important;
+        width: 24% !important;
+    }
+}
+
+
+
+/*******************************************************************/
+
+
+
+@media screen and (max-width:768px) and (min-width:426px) {
+    .index-media-user {
+        width: 45%;
+        float: left;
+    }
+
+    .devise-edit-button-field {
+        text-align: center;
+    }
+
+    /* user-profile */
+    .profile-link-col {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .media-profile-image {
+        margin-top:30px !important;
+    }
+
+    .profile-edit-container {
+        width: 70% !important;
+    }
+
+    /* talk-show */
+    .room-name > h3 {
+        font-size: 17px;
+    }
+    .room-message-container {
+        width: 80% !important;
+    }
+    .media-each-his-message {
+        max-width: 250px !important;
+        margin-left: 14px !important;
+    }
+    .current-user-content {
+        max-width: 300px !important;
+    }
+
+    /* user-gallery */
+    .history-gallery-header {
+        width:95% !important;
+        // font-size: 19px;
+    }
+    .history-image-container > div:nth-child(1) {
+        width: 100%;
+    }
+    .history-image-container > div:nth-child(1) > div {
+        width: 100%;
+        float: left;
+    }
+    .each-history-image {
+        width: 50% !important;
+
+    }
+    .history-image {
+        width: 100%;
+        height: 180px;
+    }
+
+    /* devise-omniauth */
+    .omniauth-facebook-link {
+        font-size: 15px !important;
+    }
+
+
+    /* questionnaire */
+    .new-questionnaire-div {
+        width: 50% !important;
+    }
+
+}
+
+
+/*******************************************************************/
+
+
+@media screen and (max-width:425px) and (min-width:376px) {
+    /* user-profile */
+    .profile-label {
+        font-size: 13px !important;
+        
+    }
+
+    .profile-link-col {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .media-profile-image {
+        margin-top:30px !important;
+    }
+
+    .profile-edit-container {
+        width: 70% !important;
+    }
+
+    /* user-edit */
+    .devise-edit-form {
+        padding: 20px 15px !important;
+    }
+    .devise-edit-label {
+        font-size: 13px;
+        font-weight: bold !important;
+    }
+
+    /* user-leave */
+    .user-leave-container {
+        font-size: 13px !important;
+    }
+
+    .leave-button {
+        padding: 8px 25px !important;
+    }
+
+    .user-return-container {
+        font-size: 13px !important;
+    }
+
+    .return-button {
+        padding: 8px 25px !important;
+    }
+
+
+    /* talk-show */
+    .room-name > h3 {
+        font-size: 16px;
+    }
+
+    /* user-gallery */
+    .history-gallery-header {
+        width:95% !important;
+        font-size: 17px;
+    }
+    .history-image-container > div:nth-child(1) {
+        width: 100%;
+    }
+    .history-image-container > div:nth-child(1) > div {
+        width: 100%;
+        float: left;
+    }
+    .each-history-image {
+        width: 100% !important;
+    }
+    .history-image {
+        width: 100%;
+        height: 180px;
+    }
+
+    /* devise-omniauth */
+    .omniauth-facebook-link {
+        font-size: 13px !important;
+    }
+    .omniatuh-facebook > img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    /* ruestionnaire */
+    .questionnaire-theme-index {
+        font-size: 15px !important;
+    }
+
+    .questionnaire-header {
+        font-size: 17px !important;
+    }
+
+    .questionnaire-each-item-content {
+        font-size: 12px !important;
+    }
+
+
+    /* history */
+
+    .talk-link {
+        font-size: 16px !important;
+    }
+}
+
+
+/*******************************************************************/
+
+
+@media screen and (max-width:375px) and (min-width:321px) {
+    .devise-edit-label {
+        font-size: 12px;
+    }
+}

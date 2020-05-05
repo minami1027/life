@@ -1,0 +1,28 @@
+ja:
+  activerecord:
+    models:
+      history: 歴史
+      message: メッセージ
+      comment: コメント
+      questionnaire: アンケート
+    attributes:
+      history:
+        age: 年齢
+        event: 主な出来事
+        barometer: バロメーター
+        sub_events: 「関連すること・もの」
+      sub_events:
+        part: 「関連すること・もの」のタイトル
+        detail: 「関連すること・もの」の内容
+      comment:
+        body: コメント内容
+      message:
+        content: メッセージの内容
+      questionnaire:
+        theme: テーマ
+        category: カテゴリー
+        questionnaire_items: アンケート
+        questionnaires: アンケート
+      questionnaire_items:
+        content: アンケート項目内容
+      

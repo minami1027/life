@@ -1,0 +1,25 @@
+<div class="talk-show">
+    <div class="room-name">
+        <h5 class="talk-back-content">
+            <%= link_to 'トーク一覧へ', talks_path, class:"talk-back-text" %>
+        </h5>
+        <hr>
+        <h3>
+            <%= @entry0.name unless @entry0.name == current_user.name %>
+            
+            <%= @entry1.name unless @entry1.name == current_user.name %>
+        </h3>
+    </div>
+
+    <div id="room_message_container" class="room-message-container" style="height: 580px; overflow:scroll">
+        <%= render 'room_message_container', messages: @messages %>
+    </div>
+
+    <div id="ajax_result"></div>
+    <div class="make-message">
+        <%= form_for(@message, url: talk_messages_path(@room.id), remote: true) do |f| %>
+            <%= f.text_area :content, placeholder: "140字以内で入力してください", cols:"80" %>
+            <%= f.submit "送信", class:"talk-button" %>
+        <% end %>
+    </div>
+</div>

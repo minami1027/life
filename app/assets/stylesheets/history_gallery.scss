@@ -1,0 +1,53 @@
+.history-gallery-link {
+    padding: 15px 20px;
+    font-size: 18px;
+    margin-top: 10px;
+    // border: 1px solid rgba(138, 138, 138, 0.2);
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(52, 117, 167, 0.446);
+}
+.history-gallery-link:hover {
+    transform: translateY(5px);
+    box-shadow: 0 1px 2px rgba(52, 117, 167, 0.446);
+}
+
+.history-gallery {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 15px;
+}
+
+.history-gallery-header {
+    width: 30%;
+    margin: 30px auto 0;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 3px solid rgba(138, 138, 138, 0.2);
+}
+
+.history-image-container {
+    margin: 15px 0 75px;
+    padding: 0 40px 50px;
+    // border: 1px solid rgba(138, 138, 138, 0.2);
+    box-shadow: 0 5px 8px rgba(45, 157, 231, 0.297);
+}
+
+.history-image:hover {
+    transform: scale(1.5, 1.5);
+}
+
+.history-image-title {
+    display: inline-block;
+    font-size: 17px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    // margin-bottom: 5px;
+    font-family: "tree-font";
+}
+
+@font-face {
+    font-family: "tree-font";
+    src: font-url('sawarabi-gothic-medium.ttf');
+}

@@ -1,0 +1,264 @@
+// Place all the styles related to the Histories controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+/* history-index */
+.history-index {
+    padding: 40px 0 20px;
+}
+
+.history-header {
+    width: 42%;
+    margin: 0 auto 20px;
+    text-align: center;
+    padding-bottom: 8px;
+    border-bottom: 3px solid rgba(138, 138, 138, 0.2);
+}
+
+.note-history {
+    width: 50%;
+    margin: 15px auto;
+    text-align: center;
+    font-size: 18px;
+}
+
+.user-histories {
+    padding: 30px 50px;
+    width: 80%;
+    margin: 15px auto 40px;
+    // background-color: rgba(141, 147, 138, 0.065);
+    border: 1px solid rgba(138, 138, 138, 0.3);
+    // border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(135, 177, 221, 0.521);
+}
+
+.user-history-table {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.user-history-row {
+    // border-collapse: separate;
+    // padding: 15px 0 5px;
+    border-bottom: 1px dotted rgba(138, 138, 138, 0.2);
+    height: 60px;
+}
+.user-history-row:hover {
+    box-shadow: 0 10px 15px rgba(104, 113, 115, 0.106);
+    transform: translateX(-18px);
+}
+
+.user-history {
+
+}
+
+.history-index-td {
+    padding: 15px 0 5px;
+    // font-family: "tree-font";
+    // text-shadow: 1px 3px 5px rgba(99, 90, 90, 0.222);
+}
+.history-index-td:nth-child(4) {
+    padding: 15px 0 5px;
+    font-family: "tree-font";
+    text-shadow: 1px 3px 5px rgba(99, 90, 90, 0.365);
+}
+
+.add-history-link {
+    width: 30%;
+    margin: 20px auto;
+    text-align: center;
+    padding: 10px 15px;
+    border: 1px solid rgba(138, 138, 138, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(113, 185, 182, 0.29);
+}
+.add-history-link:hover {
+    transform: translateY(5px);
+    box-shadow: 0 1px 5px rgba(113, 185, 182, 0.29);
+}
+
+.add-history-text {
+    font-size: 19px;
+}
+
+
+/* history-show */
+.history-show {
+    padding: 40px 0 20px;
+}
+
+.history-detail {
+    width: 70%;
+    margin: 30px auto 70px;
+    padding: 15px 20px 30px;
+    text-align: center;
+    background-color: rgba(111, 117, 116, 0.099);
+    border-radius: 15px;
+}
+
+.history-detail-table {
+    width: 100%;
+}
+
+.history-detail-tr {
+    font-family: "tree-font";
+}
+
+.history-detail-th {
+    padding: 10px 20px 5px;
+    border-bottom: 1px solid rgba(138, 138, 138, 0.2);
+    font-size: 17px;
+}
+
+.history-detail-td {
+    text-align: left;
+    padding: 10px 20px 5px;
+    border-bottom: 1px dashed rgba(138, 138, 138, 0.2);
+    font-size: 16px;
+}
+
+.history-detail-td:last-child::before {
+    content: " | ";
+    color: rgba(138, 138, 138, 0.2);
+}
+
+.history-show-notes {
+    width: 70%;
+    margin: 30px auto 75px;
+    text-align: center;
+}
+
+
+/* history-new */
+.history-new {
+    padding: 40px 0 20px;
+}
+
+.history-new-form {
+    padding: 25px 10px 50px;
+    text-align: center;
+    width: 83%;
+    margin: 0 auto;
+    border: 2px solid rgba(92, 97, 105, 0.276);
+    background-color: rgba(235, 231, 231, 0.154);
+}
+
+.history-field {
+    width: 70%;
+    margin: 0 auto !important;
+    padding: 15px 0 5px;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(138, 138, 138, 0.5);
+}
+
+.histroy-field-label {
+    text-align: left;
+}
+
+.history-field-value {
+    text-align: left;
+}
+
+#history_age {
+    width: 20%;
+    border: 1px solid rgba(138, 138, 138, 0.2);
+    border-radius: 5px;
+}
+
+#history_event {
+    width: 100%;
+    border: 1px solid rgba(138, 138, 138, 0.2);
+    border-radius: 5px;
+}
+
+#history_barometer {
+    width: 20%;
+    border: 1px solid rgba(138, 138, 138, 0.2);
+    border-radius: 5px;
+}
+
+
+/* history-edit */
+.history-edit {
+    padding: 40px 0 20px;
+}
+
+.history-edit-form {
+    padding: 25px 0;
+}
+
+/* nested-field */
+.sub-event-form {
+    width: 70%;
+    margin: 0 auto !important;
+    padding: 20px 0 30px;
+    border-bottom: 1px solid rgba(138, 138, 138, 0.5);
+}
+
+.history-nested-fields {
+    margin-bottom: 10px;
+    padding: 15px 0;
+    border: 1px solid rgba(138, 138, 138, 0.2);
+    border-radius: 20px;
+}
+
+.nest-field > input:nth-child(3) {
+    width: 40%;
+}
+
+.nest-field > input:nth-child(7) {
+    width: 90%;
+}
+
+.nest-field {
+    
+}
+
+.links {
+    width: 15%;
+    margin: 15px auto 0;
+    padding: 5px 0;
+    border: 3px solid rgba(138, 138, 138, 0.2);
+    border-radius: 20px;
+    background-color: rgba(190, 187, 187, 0.2);
+}
+
+.nest-remove {
+    margin-top: 45px;
+}
+
+/* delete-history */
+.delete-history {
+    width: 60%;
+    margin: 30px auto;
+    padding: 10px;
+    text-align: center;
+    border-top: 3px solid rgba(138, 138, 138, 0.5);
+}
+
+
+/* history-improve */
+// .user-history-row:nth-child(2n-1) {
+//     background-color: rgba(255,255,255,1);
+// }
+
+// .user-history-row:nth-child(2n) {
+//     background-color: rgba(162, 163, 166, 0.127);
+// }
+
+.button-box-fix {
+    border: none;
+    background: none;
+}
+
+.trans-edit-history-icon {
+    transform: rotate(-30deg);
+}
+
+
+/* font-family */ 
+@font-face {
+    font-family: "tree-font";
+    src: font-url('sawarabi-gothic-medium.ttf');
+}

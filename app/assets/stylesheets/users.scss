@@ -1,0 +1,199 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* users-index */
+.index-page {
+    padding: 20px 30px 50px;
+    position: relative;
+}
+
+.root-users-container {
+    padding: 38px 50px 50px;
+}
+
+.index-user {
+    padding: 15px;
+    text-align: center;
+    // margin-right: 15px;
+    margin-bottom: 30px;
+    // border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 15px;
+    box-shadow: 3px 6px 10px rgba(139, 178, 207, 0.338);
+}
+
+.index-user:hover {
+    box-shadow: 5px 10px 15px rgba(51, 137, 202, 0.338);
+    transform: translateY(-15px);
+    background-color: rgba(185, 231, 227, 0.079);
+}
+
+.index-user-name {
+    font-size: 18px;
+    border-bottom: 1px solid rgba(138, 138, 138, 0.5);
+    padding-bottom: 5px;
+    color: rgba(54, 48, 48, 0.807);
+    text-shadow: 0 1px 1px rgba(95, 90, 90, 0.875);
+}
+
+.index-user-image-container {
+    padding: 5px 0 15px;
+    border-bottom: 1px solid rgba(138, 138, 138, 0.5);
+}
+
+.index-user-image {
+    border-radius: 5px;
+}
+
+.index-user-tags {
+    padding-top: 15px;
+    padding-bottom: 10px;
+}
+
+.index-user-tags > span {
+    width: 80%;
+    padding: 5px 8px;
+    display: block;
+    background-color: rgba(51, 201, 247, 0.056);
+    box-shadow: 0 1px 3px rgba(51, 201, 247, 0.467);
+    border-radius: 5px;
+    margin: 0 auto 8px;
+    font-size: 13px;
+}
+
+.index-user-tags > span:last-child {
+    margin: 0 auto;
+}
+
+
+/* users-show */
+.user-profile {
+    padding: 40px 5px 40px;
+    // border: 1px solid rgba(0,0,0,0.5);
+    border-radius: 3px;
+    box-shadow: 0 3px 3px rgba(75, 76, 83, 0.555);
+    // width: 65% !important;
+}
+
+.profile-text {
+    margin-top: 20px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid rgba(138, 138, 138, 0.5);
+}
+
+.profile-label {
+    display: inline-block;
+    width: 30%;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.profile-value {
+    display: inline-block;
+    font-size: 16px;
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.profile-image-label {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.profile-image {
+    border-radius: 5px;
+}
+
+.profile-user-tags {
+    padding: 8px 0 0;
+}
+
+.profile-user-tag {
+    margin-bottom: 5px;
+    padding: 5px 8px;
+    display: inline-block;
+    background-color: rgba(201, 241, 242, 0.5);
+    border-radius: 5px;
+}
+
+.profile-edit-container {
+    width: 30%;
+    margin: 50px auto 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(138, 138, 138, 0.5);
+    padding-bottom: 6px;
+}
+
+.profile-edit-link {
+    font-size: 18px;
+}
+
+.warning-container {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+    border-bottom: 1px solid rgba(138, 138, 138, 0.2);
+}
+
+.warning-text {
+    font-size: 15px;
+    color: rgb(228, 145, 68);
+}
+
+
+/* 退会するユーザー */
+.leave-user {
+    padding: 0 30px 50px;
+}
+
+.leave-notes-user {
+    width: 40%;
+    margin: 15px auto 60px;
+    padding: 15px;
+    text-align: center;
+    border-bottom: 3px solid rgba(138, 138, 138, 0.5);
+}
+
+.leave-button {
+    padding: 15px 50px;
+    background-color: rgba(221, 47, 47, 0.821);
+    border-radius: 10px;
+    color: white;
+    // margin-left: 80px;
+    display: inline-block;
+}
+
+.return-button {
+    padding: 15px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(138, 138, 138, 0.5);
+    display: inline-block;
+}
+
+/* プロフィールのリンク（ブックマーク、トーク一覧） */
+.user-profile-links {
+    padding: 30px 0 15px;
+    width: 85%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.user-profile-link {
+    font-size: 17px;
+}
+
+.profile-link-col {
+    padding: 8px 13px !important;
+    box-shadow: 0 1px 1px rgba(138, 138, 138, 0.5);
+}
+.profile-link-col:hover {
+    transform: translateY(5px);
+    box-shadow: 0 4px 1px rgba(138, 138, 138, 0.5);
+}
+
+.media-profile-image {
+    margin: 0 auto;
+}

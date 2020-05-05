@@ -1,0 +1,228 @@
+<div class="history-index">
+<!-- トーク関連 -->
+    <% if user_signed_in? %>
+        <% unless @user.id == current_user.id %>
+            <div class="talk-room-button-container">
+                <% if @isRoom %>
+                    <div class="talk-link-div">
+                        <%= link_to 'トークルームへ', talk_path(@roomId), class:"talk-link" %>
+                    </div>
+                <% else %>
+                    <%= form_for(@room, url: talks_path) do |f| %>
+                        <%= fields_for @entry do |e| %>
+                            <%= e.hidden_field :user_id, value: @user.id %>
+                        <% end %>
+                        <div class="talk-begin-div">
+                            <%= f.submit 'トークを始める', class:"talk-begin-button" %>
+                        </div>
+                    <% end %>
+                <% end %>
+            </div>
+        <% end %>
+    <% end %>
+
+<!-- 歴史一覧 -->
+    <h3 class="history-header"><%= @user.name %>の歴史</h3>
+
+    <div class="history-tab-group">
+        <ul class="row history-tab-row">
+            <li class="col-md-2  col-md-offset-2 history-tab" id="a_content_tab">できごと</li>
+            <!-- 不具合がおきるためコメントアウト
+                <li class="col-md-2 history-tab">イメージ</li>
+            -->
+            <li class="col-md-2 history-tab  is-active" id="b_content_tab">人生マップ</li>
+
+            <li class="col-md-2 media-history-memory-link" style="list-style:none; margin:10px 0 0 30px;">
+                <%= link_to 'メモリーズをみる', gallery_user_histories_path(@user.id), class:"history-gallery-link" %>
+            </li>
+        </ul>
+    </div>
+
+<!-- 切り替わるコンテンツ一覧 -->
+    <div class="user-histories">
+    <!-- コンテントA -->
+        <div class="history-content history-content-A">
+            <% if @user.histories.any? %>
+                <table class="user-history-table">
+                    <!-- includes -->
+                    <% @user.histories.order(:age).includes(:history_image_attachment).each do |history| %>
+                        <tr class="user-history-row">
+                            <td width="4%" class="history-index-td" id="booked_count_<%= history.id %>" style="text-align:center; padding-left:7px;">
+                                <%= render 'book_marks/mark_count', history: history %>
+                            </td>
+
+                            <% if user_signed_in? %>
+                                <td width="5%" class="history-index-td" id="book_mark_icon_<%= history.id %>">
+                                    <% if current_user.book_mark?(history) %>
+                                        <%= render 'book_marks/not_mark', history: history %>
+                                    <% else %>
+                                        <%= render 'book_marks/mark', history: history %>
+                                    <% end %>
+                                </td>
+                            <% end %>
+
+                            <td width="7%" class="history-index-td" style="font-size: 15px; padding-left:10px;">
+                                <%= history.age %>歳
+                            </td>
+
+                            <td width="60%" class="history-index-td" style="font-size: 17px;">
+                                <%= history.event %>
+                            </td>
+
+                            <!-- turbolinks無効化 -->
+                            <td width="11%" class="history-index-td">
+                                <%= link_to 'もっとみる', user_history_path(@user.id, history.id), data: {"turbolinks": false} %>
+                            </td>
+
+                            <td width="7%" class="history-index-td" style="text-align:right; padding-right:10px;">
+                                <% if user_signed_in? %>
+                                    <% if current_user.id == @user.id %>
+                                        <%= link_to edit_user_history_path(@user.id, history.id) do %>
+                                            <%= image_tag '/images/icon_119330_256.png', size:'30x30', class:"edit-history-icon" %>
+                                        <% end %>
+                                    <% end %>
+                                <% end %>
+                            </td>
+                        </tr>
+                    <% end %>
+                </table>
+            <% else %>
+                <% if current_user&.id == @user.id %>
+                    <p class="note-history">追加ページから自分史を追加してみよう！</p>
+                <% else %>
+                    <p class="note-history">このユーザーはまだ歴史を追加していません。</p>
+                <% end %>
+            <% end %>
+        </div>
+    <!-- コンテントB （不具合のためコメントアウト）
+        <div class="history-content history-content-B">
+            <% @user.histories.order(:age).each do |history| %>
+                <% if history.history_image.attached? %>
+                    <%= link_to user_history_path(@user.id, history.id) do %>
+                        <div class="history-image-container">
+                            <%= image_tag history.history_image, size:'200x200', class:"history-image" %>
+                        <div>
+                    <% end %>
+                <% end %>
+            <% end %>
+        </div>
+    -->
+
+    <!-- コンテントC -->
+        <div class="history-content history-content-C  is-show">
+            <canvas id="myChart" width="300" height="110"></canvas>
+        </div>
+    </div>
+
+
+<!-- 歴史追加 -->
+    <% if user_signed_in? %>
+        <% if current_user.id == @user.id %>
+            <div class="add-history-link"> 
+                <%= link_to '追加ページへ', new_user_history_path(@user.id), class:"add-history-text" %>
+            </div>
+        <% end %>
+    <% end %>
+</div>
+
+
+<!-- js_tabs -->
+<script type="text/javascript">
+    (function() {
+        $(function() {
+            var tabs = document.getElementsByClassName('history-tab');
+            for(var i = 0; i < tabs.length; i++) {
+                tabs[i].addEventListener('click', tabSwitch);
+            }
+
+            function tabSwitch() {
+                document.getElementsByClassName('is-active')[0].classList.remove('is-active');
+                this.classList.add('is-active');
+                document.getElementsByClassName('is-show')[0].classList.remove('is-show');
+                var arrayTabs = Array.prototype.slice.call(tabs);
+                var index = arrayTabs.indexOf(this);
+                document.getElementsByClassName('history-content')[index].classList.add('is-show');
+            }
+        });
+    })();
+</script>
+
+<!-- js_chart -->
+<script type="text/javascript">
+    (function() {
+        $(function() {
+            ctx = document.getElementById("myChart").getContext('2d')
+            myChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: gon.history_ages,
+                    datasets: [{
+                        label: gon.user_name + 'の人生バロメータ',
+                        data: gon.history_barometers,
+                        backgroundColor: [
+                            "rgba(156, 216, 104, 0.21)"
+                        ],
+                        fill: false,
+                        borderColor: [
+                            "rgba(6, 207, 83, 0.79)"
+                        ],
+                        borderWidth: 3,
+                        pointHoverBackgroundColor: "rgba(207, 249, 251, 0.55)",
+                        pointHoverBorderColor: "rgba(207, 249, 251, 0.55)",
+                        pointRadius: 5,
+                        pointStyle: 'star'
+                    }]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                min: 0,
+                                max: 100,
+                                beginAtZero:true,
+                                callback: function(value, i, values) {
+                                    return value +' %';
+                                }
+                            }
+                        }],
+                        xAxes: [{
+                            ticks: {
+                                callback: function(value, i, values) {
+                                    return value +' 歳';
+                                }
+                            }
+                        }]
+                    },
+                    tooltips: {
+                        bodyFontSize: 16,
+                        callbacks: 
+                            {
+                                label: function(tooltipItems, data) {
+                                    return gon.history_events[tooltipItems.index];
+                                }
+                            }
+                    }
+                }
+            })
+        });
+    })();
+</script>
+
+
+<!-- js_trans_icon -->
+<script type="text/javascript">
+    (function() {
+        $(function() {
+            var editIcon = document.getElementsByClassName('edit-history-icon');
+            for(var i=0, len=editIcon.length; i < len; i++) {
+                editIcon.item(i).addEventListener('mouseover', function() {
+                    this.classList.add('trans-edit-history-icon');
+                });
+
+                editIcon.item(i).addEventListener('mouseout', function() {
+                    this.classList.remove('trans-edit-history-icon');
+                });
+            }
+        });
+    })();
+</script>

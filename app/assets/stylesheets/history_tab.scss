@@ -1,0 +1,39 @@
+.history-tab-group {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.history-tab-row {
+    margin: 38px 0 15px;
+    width: 100%;
+}
+
+.history-tab {
+    list-style: none;
+    padding: 8px 15px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 17px;
+    border: 1px solid rgba(166, 184, 182, 0.263);
+    width: 100%;
+}
+
+.history-tab.is-active {
+    background-color: rgba(114, 195, 206, 0.2);
+}
+
+.history-content {
+    display: none;
+}
+
+.history-content.is-show {
+    display: block;
+}
+
+.media-history-memory-link {
+//     padding: 15px 20px;
+//     font-size: 18px;
+//     margin-top: 10px;
+//     border: 1px solid rgba(138, 138, 138, 0.2);
+//     border-radius: 10px;
+}

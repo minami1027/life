@@ -1,0 +1,14 @@
+<div class="history-nested-fields nested-fields">
+    <div class="row">
+        <div class="col-md-10 nest-field">
+            <%= f.label :part, 'タイトル' %><br>
+            <%= f.text_field :part, placeholder:"15文字以内で入力してください。"%><br>
+            <%= f.label :detail, '内容', style:"margin-top: 8px;" %><br>
+            <%= f.text_field :detail, placeholder:"50文字以内で入力してください。" %><br>
+        </div>
+
+        <div class="col-md-2 nest-remove">
+            <%= link_to_remove_association '消去', f %>
+        </div>
+    </div>
+</div>
